@@ -1,0 +1,57 @@
+<div class="page-title">
+  <h2>Витамины и добавки</h2>
+  <button class="btn" id="vit-add">Добавить</button>
+</div>
+
+<p class="notice">
+  Укажите препарат, дозировку и период приёма. Можно задать напоминания — они попадут в «Календарь».
+</p>
+
+<div id="vit-list" class="grid" aria-live="polite"></div>
+
+<div id="vit-form-wrap" style="display:none; margin-top:18px">
+  <form id="vit-form" class="card" style="padding:16px" novalidate>
+    <input type="hidden" name="id">
+    <div class="form-row">
+      <label>Название препарата
+        <input type="text" name="name" placeholder="Напр.: Омега-3" required>
+      </label>
+      <label>Дозировка
+        <input type="text" name="dose" placeholder="Напр.: 1 капс./день">
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>Периодичность
+        <select name="period" required>
+          <option value="ежедневно">Ежедневно</option>
+          <option value="через день">Через день</option>
+          <option value="еженедельно">Еженедельно</option>
+          <option value="ежемесячно">Ежемесячно</option>
+          <option value="курс">Курс</option>
+        </select>
+      </label>
+      <label>Время приёма
+        <input type="time" name="time">
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>Дата начала
+        <input type="date" name="start" required>
+      </label>
+      <label>Дата окончания (если курс)
+        <input type="date" name="end">
+      </label>
+    </div>
+
+    <label>Комментарий
+      <textarea name="notes" rows="3" placeholder="Примечания"></textarea>
+    </label>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+      <button type="submit" class="btn">Сохранить</button>
+      <button type="button" class="btn secondary" id="vit-cancel">Отмена</button>
+    </div>
+  </form>
+</div>

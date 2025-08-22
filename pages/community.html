@@ -1,0 +1,152 @@
+<div class="page-title">
+  <h2>Сообщество</h2>
+</div>
+
+<p class="notice">
+  Спокойный тон, без драматизации. Объявления и статьи модерируются. Чаты доступны только в платных тарифах (позже).
+</p>
+
+<section class="card" style="padding:16px">
+  <h3 style="margin-top:0">Опубликовать статью</h3>
+  <form id="form-article" novalidate>
+    <div class="form-row">
+      <label>Заголовок
+        <input type="text" name="article_title" required>
+      </label>
+      <label>Категория
+        <select name="category" required>
+          <option value="">— выберите —</option>
+          <option value="education">Воспитание</option>
+          <option value="health">Здоровье</option>
+          <option value="nutrition">Питание</option>
+          <option value="rescue">Спасение</option>
+          <option value="news">Новости</option>
+        </select>
+      </label>
+    </div>
+
+    <label>Текст
+      <textarea name="content" rows="8" placeholder="Полезный материал без рекламы и «слёзных» призывов" required></textarea>
+    </label>
+
+    <div class="form-row">
+      <label>Теги
+        <input type="text" name="tags" placeholder="через запятую">
+      </label>
+      <label>Обложка (jpg/png)
+        <input type="file" name="preview" accept=".jpg,.jpeg,.png">
+      </label>
+    </div>
+
+    <label class="checkbox">
+      <input type="checkbox" name="agree" required>
+      Подтверждаю авторство и согласен(на) с правилами публикации.
+    </label>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap">
+      <button type="submit" class="btn">Отправить на модерацию</button>
+      <button type="reset" class="btn secondary">Сбросить</button>
+    </div>
+  </form>
+</section>
+
+<section style="margin-top:18px" class="card">
+  <div style="padding:16px">
+    <h3 style="margin-top:0">Доска объявлений</h3>
+    <form id="form-ad" novalidate>
+      <div class="form-row">
+        <label>Тип
+          <select name="ad_type" required>
+            <option value="">— выберите —</option>
+            <option value="walk">Выгул</option>
+            <option value="volunteer">Волонтёры</option>
+            <option value="event">Выставки/Акции</option>
+            <option value="adoption">Поиск дома</option>
+            <option value="lostfound">Потерян/Найден</option>
+          </select>
+        </label>
+        <label>Город
+          <input type="text" name="city" required>
+        </label>
+      </div>
+
+      <label>Заголовок
+        <input type="text" name="title" required>
+      </label>
+
+      <label>Описание
+        <textarea name="description" rows="5" required placeholder="Коротко, по делу. Без давящих формулировок."></textarea>
+      </label>
+
+      <div class="form-row">
+        <label>Контакты
+          <input type="text" name="contact" placeholder="Телефон/ссылка" required>
+        </label>
+        <label>Актуально до
+          <input type="date" name="expires">
+        </label>
+      </div>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <button type="submit" class="btn">Опубликовать</button>
+        <button type="reset" class="btn secondary">Сбросить</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section style="margin-top:18px" class="card">
+  <div style="padding:16px">
+    <h3 style="margin-top:0">Доска позора</h3>
+    <p class="muted">Публикации доступны только с подтверждением фактов. Материалы скрываются до модерации.</p>
+
+    <form id="form-shame" novalidate>
+      <div class="form-row">
+        <label>Тип
+          <select name="subject_type" required>
+            <option value="">— выберите —</option>
+            <option value="breeder">Недобросовестный заводчик</option>
+            <option value="doghunter">Догхантер/Жестокое обращение</option>
+            <option value="fraud">Мошенничество</option>
+            <option value="other">Другое</option>
+          </select>
+        </label>
+        <label>Место/Город
+          <input type="text" name="place" required>
+        </label>
+        <label>Дата
+          <input type="date" name="date">
+        </label>
+      </div>
+
+      <label>Описание
+        <textarea name="description" rows="6" required placeholder="Факты, ссылки, детали без оскорблений."></textarea>
+      </label>
+
+      <label>Доказательства (ссылки)
+        <input type="text" name="evidence_links" placeholder="URL через запятую">
+      </label>
+
+      <label>Файлы (jpg/png/pdf)
+        <input type="file" name="evidence_files" multiple accept=".jpg,.jpeg,.png,.pdf">
+      </label>
+
+      <label class="checkbox">
+        <input type="checkbox" name="confirm" required>
+        Подтверждаю достоверность сведений, даю согласие на обработку данных и понимаю ответственность за клевету.
+      </label>
+
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <button type="submit" class="btn">Отправить на модерацию</button>
+        <button type="reset" class="btn secondary">Сбросить</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section style="margin-top:18px">
+  <h3>Лента</h3>
+  <div id="articles-list" class="grid"></div>
+  <div id="ads-list" class="grid"></div>
+  <div id="shame-list" class="grid"></div>
+</section>

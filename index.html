@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PetHub</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🐾 PetHub</h1>
+  </header>
+
+  <nav>
+    <button class="tab-button" data-page="profile">Профиль</button>
+    <button class="tab-button" data-page="docs">Документы</button>
+    <button class="tab-button" data-page="treatments">Обработки</button>
+    <button class="tab-button" data-page="vitamins">Витамины</button>
+    <button class="tab-button" data-page="brands">Бренды</button>
+    <button class="tab-button" data-page="community">Сообщество</button>
+    <button class="tab-button" data-page="calendar">Календарь</button>
+    <button class="tab-button" data-page="legal">Правила</button>
+  </nav>
+
+  <main id="content">
+    <h2>Добро пожаловать в PetHub!</h2>
+    <p>Выберите вкладку сверху, чтобы продолжить.</p>
+  </main>
+
+  <footer>
+    <p>© 2025 PetHub</p>
+  </footer>
+
+  <!-- Базовый каркас -->
+  <script src="script.js" defer></script>
+
+  <!-- Модули (правильные пути) -->
+  <script src="js/modules/auth.js" defer></script>
+  <script src="js/modules/profile.js" defer></script>
+  <script src="js/modules/docs.js" defer></script>
+  <script src="js/modules/treatments.js" defer></script>
+  <script src="js/modules/vitamins.js" defer></script>
+  <script src="js/modules/brands.js" defer></script>
+  <script src="js/modules/community.js" defer></script>
+  <script src="js/modules/calendar.js" defer></script>
+  <!-- Если добавишь модуль для «Правила», раскомментируй строку ниже -->
+  <!-- <script src="js/modules/legal.js" defer></script> -->
+</body>
+</html>

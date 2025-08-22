@@ -1,0 +1,50 @@
+<h2 class="page-title">Мой профиль</h2>
+
+<form id="profile-form" class="card" style="padding:16px;">
+  <div class="form-row">
+    <div>
+      <label>Имя</label>
+      <input type="text" name="name" placeholder="Введите ваше имя">
+    </div>
+    <div>
+      <label>Email</label>
+      <input type="email" name="email" placeholder="example@mail.com">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div>
+      <label>Телефон</label>
+      <input type="text" name="phone" placeholder="+7 900 123-45-67">
+    </div>
+    <div>
+      <label>Соцсеть</label>
+      <input type="url" name="social" placeholder="https://vk.com/...">
+    </div>
+  </div>
+
+  <div>
+    <label>Фото (аватар)</label>
+    <input type="file" name="avatar" accept="image/*">
+    <div id="avatar-preview" style="margin-top:10px;"></div>
+  </div>
+
+  <div>
+    <label>Мои питомцы</label>
+    <div id="pets-list"></div>
+    <button type="button" class="btn secondary" id="add-pet">+ Добавить питомца</button>
+  </div>
+
+  <div class="form-row">
+    <div class="checkbox">
+      <input type="checkbox" name="chat_enabled" id="chat_enabled">
+      <label for="chat_enabled">Разрешить личные сообщения</label>
+    </div>
+    <div class="checkbox">
+      <input type="checkbox" name="visible" id="visible">
+      <label for="visible">Показывать мой профиль</label>
+    </div>
+  </div>
+
+  <button type="submit" class="btn">💾 Сохранить</button>
+</form>

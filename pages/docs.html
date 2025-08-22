@@ -1,0 +1,56 @@
+<div class="page-title">
+  <h2>Документы</h2>
+  <button class="btn" id="btn-new-doc">Загрузить документ</button>
+</div>
+
+<p class="notice">
+  Храните фото/сканы: метрика, родословная, ветпаспорт, справки.  
+  ⚠️ Файлы остаются только у вас в браузере (LocalStorage).
+</p>
+
+<div id="docs-list" class="grid" aria-live="polite"></div>
+
+<div id="doc-form-wrap" style="display:none; margin-top:18px">
+  <form id="form-doc" novalidate>
+    <input type="hidden" name="id">
+
+    <div class="form-row">
+      <label>Тип документа
+        <select name="type" required>
+          <option value="">— выберите —</option>
+          <option value="metric">Метрика</option>
+          <option value="pedigree">Родословная</option>
+          <option value="vetpass">Ветпаспорт</option>
+          <option value="certificate">Справка/Анализы</option>
+          <option value="other">Другое</option>
+        </select>
+      </label>
+
+      <label>Название
+        <input type="text" name="title" placeholder="Например: Родословная РКФ" required>
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>Дата документа
+        <input type="date" name="date">
+      </label>
+      <label>Номер/серия
+        <input type="text" name="number" placeholder="Необязательно">
+      </label>
+    </div>
+
+    <label>Файл
+      <input type="file" name="file" accept=".jpg,.jpeg,.png,.pdf">
+    </label>
+
+    <label>Комментарий
+      <textarea name="notes" placeholder="Что важно помнить по этому документу"></textarea>
+    </label>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap">
+      <button type="submit" class="btn">Сохранить</button>
+      <button type="button" class="btn secondary" id="btn-cancel-doc">Отмена</button>
+    </div>
+  </form>
+</div>

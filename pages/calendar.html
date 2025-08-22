@@ -1,0 +1,77 @@
+<div class="calendar-page">
+  <h2>Календарь</h2>
+
+  <!-- Кнопка "Добавить" -->
+  <div style="margin-bottom:12px">
+    <button class="btn" id="cal-add">Добавить событие</button>
+  </div>
+
+  <!-- Форма (скрыта по умолчанию — ей управляет calendar.js) -->
+  <div id="cal-form-wrap" style="display:none; margin-bottom:18px">
+    <form id="cal-form" class="card" style="padding:16px" novalidate>
+      <input type="hidden" name="id">
+
+      <div class="form-row">
+        <label>Дата
+          <input type="date" name="date" required>
+        </label>
+        <label>Время
+          <input type="time" name="time">
+        </label>
+      </div>
+
+      <label>Название события
+        <input type="text" name="title" required placeholder="Напр.: Прививка комплексная">
+      </label>
+
+      <label>Тип события
+        <select name="type">
+          <option value="обработка">Обработка</option>
+          <option value="витамины">Витамины</option>
+          <option value="процедура">Медпроцедура</option>
+          <option value="другое">Другое</option>
+        </select>
+      </label>
+
+      <div class="form-row">
+        <label>Напомнить (дата)
+          <input type="date" name="remindDate">
+        </label>
+        <label>Напомнить (время)
+          <input type="time" name="remindTime">
+        </label>
+      </div>
+
+      <label>Комментарий
+        <textarea name="notes" rows="3" placeholder="Например: доза, клиника, примечания"></textarea>
+      </label>
+
+      <div style="margin-top:10px; display:flex; gap:8px; flex-wrap:wrap">
+        <button type="submit" class="btn">Сохранить</button>
+        <button type="button" class="btn secondary" id="cal-cancel">Отмена</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Фильтры (точно такие id ждёт calendar.js) -->
+  <div style="margin-bottom:12px; display:flex; gap:10px; flex-wrap:wrap">
+    <select id="cal-filter-range" title="Период">
+      <option value="upcoming">Ближайшие</option>
+      <option value="today">Сегодня</option>
+      <option value="week">На неделю</option>
+      <option value="month">В этом месяце</option>
+      <option value="all">Все</option>
+    </select>
+
+    <select id="cal-filter-type" title="Тип события">
+      <option value="">Все типы</option>
+      <option value="обработка">Обработки</option>
+      <option value="витамины">Витамины</option>
+      <option value="процедура">Процедуры</option>
+      <option value="другое">Другое</option>
+    </select>
+  </div>
+
+  <!-- Список событий -->
+  <div id="cal-list" class="grid"></div>
+</div>

@@ -1,0 +1,97 @@
+<div class="page-title">
+  <h2>Приюты</h2>
+</div>
+
+<p class="notice">
+  Публиковать список приютов будем только после верификации. Если вы представляете приют — заполните заявку ниже.
+</p>
+
+<section class="card" style="padding:16px">
+  <h3 style="margin-top:0">Заявка на верификацию приюта</h3>
+  <form id="form-shelter-apply" novalidate>
+    <div class="form-row">
+      <label>Название приюта
+        <input type="text" name="shelter_name" required placeholder="Официальное название">
+      </label>
+      <label>Орг.-правовая форма
+        <select name="legal_form" required>
+          <option value="">— выберите —</option>
+          <option value="nko">НКО / Фонд</option>
+          <option value="ano">АНО</option>
+          <option value="ip">ИП (для передачи средств)</option>
+          <option value="other">Другое</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>ИНН
+        <input type="text" name="inn" placeholder="10 или 12 цифр">
+      </label>
+      <label>ОГРН / ОГРНИП
+        <input type="text" name="ogrn" placeholder="13 или 15 цифр">
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>Регион
+        <input type="text" name="region" placeholder="Напр.: Москва">
+      </label>
+      <label>Город
+        <input type="text" name="city" placeholder="Напр.: Москва">
+      </label>
+    </div>
+
+    <label>Адрес (если публичный)
+      <input type="text" name="address" placeholder="Необязательно">
+    </label>
+
+    <div class="form-row">
+      <label>Контактное лицо
+        <input type="text" name="contact_name" required>
+      </label>
+      <label>Email
+        <input type="email" name="email" required>
+      </label>
+      <label>Телефон
+        <input type="tel" name="phone" required>
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>Сайт
+        <input type="url" name="site" placeholder="https://...">
+      </label>
+      <label>VK
+        <input type="url" name="vk" placeholder="https://vk.com/...">
+      </label>
+      <label>Telegram
+        <input type="url" name="tg" placeholder="https://t.me/...">
+      </label>
+    </div>
+
+    <label>Реквизиты для помощи (текст)
+      <textarea name="requisites" placeholder="Банк, счёт, получатель и пр."></textarea>
+    </label>
+
+    <label>Подтверждающие документы (pdf/jpg/png)
+      <input type="file" name="docs" accept=".pdf,.jpg,.jpeg,.png" multiple>
+    </label>
+
+    <label class="checkbox">
+      <input type="checkbox" name="agree" required>
+      Подтверждаю достоверность сведений и согласен(на) с обработкой персональных данных (152-ФЗ).
+    </label>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap">
+      <button type="submit" class="btn">Отправить заявку</button>
+      <button type="reset" class="btn secondary">Сбросить</button>
+    </div>
+  </form>
+</section>
+
+<section style="margin-top:18px">
+  <h3>Нефинансовая помощь (примеры)</h3>
+  <p class="muted">Позже здесь будут заявки приютов на волонтёров, транспорт, корма и пр.</p>
+  <div id="needs-list" class="grid"></div>
+</section>

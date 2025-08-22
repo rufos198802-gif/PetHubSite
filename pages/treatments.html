@@ -1,0 +1,56 @@
+<div class="page-title">
+  <h2>Обработки</h2>
+  <button class="btn" id="trt-add">Добавить запись</button>
+</div>
+
+<p class="notice">
+  Ведите учёт: прививки, глисты, блохи/клещи, прочие процедуры. Записи можно редактировать и удалять. При сохранении можно добавить напоминание в Календарь.
+</p>
+
+<div id="trt-list" class="grid" aria-live="polite"></div>
+
+<div id="trt-form-wrap" style="display:none; margin-top:18px">
+  <form id="trt-form" class="card" style="padding:16px" novalidate>
+    <input type="hidden" name="id">
+    <div class="form-row">
+      <label>Тип
+        <select name="kind" required>
+          <option value="прививка">Прививка</option>
+          <option value="глисты">Глисты</option>
+          <option value="блохи/клещи">Блохи/Клещи</option>
+          <option value="прочее">Прочее</option>
+        </select>
+      </label>
+      <label>Дата проведения
+        <input type="date" name="date" required>
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>Препарат
+        <input type="text" name="drug" placeholder="Название препарата" required>
+      </label>
+      <label>Дозировка
+        <input type="text" name="dose" placeholder="Напр.: 1 таб. / 20 кг">
+      </label>
+    </div>
+
+    <div class="form-row">
+      <label>Следующая дата (напоминание)
+        <input type="date" name="nextDate">
+      </label>
+      <label>Время напоминания
+        <input type="time" name="nextTime">
+      </label>
+    </div>
+
+    <label>Комментарий
+      <textarea name="notes" rows="3" placeholder="Дополнительно: ветклиника, реакция и т.п."></textarea>
+    </label>
+
+    <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px">
+      <button type="submit" class="btn">Сохранить</button>
+      <button type="button" class="btn secondary" id="trt-cancel">Отмена</button>
+    </div>
+  </form>
+</div>
